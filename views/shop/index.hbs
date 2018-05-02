@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-sm-6 col-md-4 offset-md-4 offset-sm-3">
+        <div id="success" class="alert alert-success {{#if noMessages}}d-none{{/if}}">
+            {{successMsg}}
+        </div>
+    </div>
+</div>
+
+{{#each products}}
+<div class="row">
+    {{#each this}}
+    <div class="col mb-3 rounded border mx-3 d-flex flex-column">
+        <div class="thumbnail">
+            <img src="{{this.imagePath}}" alt="{{this.title}}" class="rounded mx-auto d-block img-responsive">
+        </div>
+        <div class="caption">
+            <h3>{{this.title}}</h3>
+            <p class="description">{{this.description}}
+            </p>
+            <!--以下的class是bootstrap自带的-->
+            <div class="clearfix">
+                <div class="price float-left">${{this.price}}</div>
+                <a href="/add-to-cart/{{this._id}}" class="btn btn-success float-right" role="button">Add to Shopping Cart</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/each}}

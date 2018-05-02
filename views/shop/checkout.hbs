@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-lg-6 offset-md-3">
+        <div class="row mb-3">
+            <div class="col-md-12 offset-md-3">
+                <h1>Checkout</h1>
+                <h4>Your Total: ${{total}}</h4>
+            </div>
+            <div class="col-md-12">
+                <div id="charge-error" class="alert alert-danger {{#if noError}}d-none{{/if}}">
+                    {{errMsg}}
+                </div>
+            </div>
+        </div>
+        <form action="/checkout" method="post" id="checkout-form">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control is-valid" id="name" name="name" placeholder="name" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" class="form-control is-valid" id="address" placeholder="address" required>
+                </div>
+            </div>
+            <hr class="col-md-12">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="card-name">Card Holder Name</label>
+                    <input type="text" class="form-control is-valid" id="card-name" placeholder="card holder name" required>
+                </div>
+                <div class="col-md-9 mb-3">
+                    <label for="card-number">Credit Card Number</label>
+                    <input type="text" class="form-control is-valid" id="card-number" placeholder="credit card number" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="card-cvc">CVC</label>
+                    <input type="text" class="form-control is-valid" id="card-cvc" placeholder="cvc" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="card-expiry-month">Expiration Month</label>
+                    <input type="text" class="form-control is-valid" id="card-expiry-month" placeholder="card expiry month" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="card-expiry-year">Expiration Year</label>
+                    <input type="text" class="form-control is-valid" id="card-expiry-year" placeholder="card expiry year" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-right col-lg-12">
+                    <button class="btn btn-success" type="submit">Checkout</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--stripe SDK-->
+<!--need jquery support before use-->
+<!--
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    -->
+<script type="text/javascript" src="javascripts/stripe_v2.js"></script>
+<script type="text/javascript" src="javascripts/checkout.js"></script>

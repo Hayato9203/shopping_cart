@@ -1,0 +1,26 @@
+.container {
+    margin-top: 50px;
+}
+
+.row {
+    margin: 30px;
+}
+
+.col {
+    border: thin solid #7f7f7f;
+    padding: 20px;
+}
+
+.thumbnail img {
+    max-height: 150px;
+    vertical-align: top;
+}
+
+.thumbnail .description {
+    color: #7f7f7f;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+}
